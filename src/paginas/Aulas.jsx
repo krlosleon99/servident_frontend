@@ -40,9 +40,11 @@ const Aulas = () => {
         <table className="w-full border-collapse border">
           <thead>
             <tr className="bg-neutral-200">
-              <th className="p-2">Tema a Tratar</th>
-              <th className="p-2">Profesor</th>
-              <th className="p-2">Materia</th>
+              <th className='p-2'>Tema</th>
+              <th className='p-2'>Profesor</th>
+              <th className='p-2'>Materia</th>
+              <th className='p-2'>Fecha</th>
+              <th className='p-2'>Hora</th>
             </tr>
           </thead>
           <tbody className='w-full'>
@@ -56,6 +58,12 @@ const Aulas = () => {
                 </td>
                 <td className="p-2">
                   {materias.find((materia) => materia._id === aula.materia)?.nombre || 'Materia no encontrada'}
+                </td>
+                <td className="p-2">
+                  {aula.fecha.split('T')[0]}
+                </td>
+                <td className="p-2">
+                  {aula.hora}
                 </td>
               </tr>
             ))}
